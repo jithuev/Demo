@@ -20,13 +20,17 @@ public class CommitController {
 	    String result = restTemplate.getForObject(uri, String.class);
 	    
 	    JSONParser parse = new JSONParser();
+	    JSONObject jsonArray1 = new JSONObject();
+	    JSONObject jsonarr_1  = new JSONObject();
 	    
 	    JSONArray jsonArray = (JSONArray)parse.parse(result);
-	    JSONObject jsonArray1 = (JSONObject) jsonArray.get(0);
-	    
-	    JSONObject jsonarr_1 = (JSONObject) jsonArray1.get("commit");
+	    for(int i=0; i<jsonArray.size(); i++) {
+	    	jsonArray1 = (JSONObject) jsonArray.get(i);
+	    	jsonarr_1 = (JSONObject) jsonArray1.get("commit");
+	    	System.out.println("\nmessage: " +jsonarr_1.get("message"));
+	    }
 
-	    for(int i=0;i<jsonarr_1.size();i++)
+	   /* for(int i=0;i<jsonarr_1.size();i++)
 
 	    {
 
@@ -34,7 +38,7 @@ public class CommitController {
 	    System.out.println("\nPlace id: " +jsonarr_1.get("message"));
 
 
-	    }
+	    }*/
 	    
 	    System.out.println(result);
 	}
