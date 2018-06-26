@@ -33,10 +33,14 @@ public class CommitServiceImpl implements CommitService {
 	@Autowired
 	Committer committer;
 	
+	String branchName;
+	
 	@Override
-	public void getCommitHistory() {
-		final String uri = "https://api.github.com/repos/jithuev/Demo/commits";
-
+	public void getCommitHistory(String brachName) {
+		this.branchName = brachName;
+		
+		final String uri = "https://api.github.com/repos/jithuev/Demo/commits?sha="+branchName;
+		System.out.println("banchName >>>>> "+branchName);
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
 //		String result = result1.replaceAll("\\[", "").replaceAll("\\]","");

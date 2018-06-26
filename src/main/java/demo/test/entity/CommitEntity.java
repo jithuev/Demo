@@ -2,16 +2,16 @@ package demo.test.entity;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+@Component
 //@XmlRootElement(name="sha")
 public class CommitEntity {
 	String sha;
 	String node_id;
-	
 	String commitMessage;
-	String commitId;
-
 	Author author;
 	Committer committer;
 	
@@ -54,13 +54,5 @@ public class CommitEntity {
 
 	public void setCommitMessage(String commitMessage) {
 		this.commitMessage = commitMessage;
-	}
-
-	public String getCommitId() {
-		return commitId;
-	}
-
-	public void setCommitId(String commitId) {
-		this.commitId = commitId;
 	}
 }

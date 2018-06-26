@@ -19,9 +19,9 @@ public class CommitController {
 	@Autowired
 	CommitServiceImpl commitServiceImpl1;
 	
-	@RequestMapping(path = "/getcommitHistory", method = RequestMethod.GET)    
-	public void getCommitHistory() throws ParseException {
-		commitServiceImpl1.getCommitHistory();
+	@RequestMapping(path = "/getcommitHistory", method = RequestMethod.POST)    
+	public void getCommitHistory(@RequestParam("branchName") String branchName) throws ParseException {
+		commitServiceImpl1.getCommitHistory(branchName);
 	}
 	
 	@RequestMapping(path="/getCommitHistoryForCommit", method = RequestMethod.POST)    

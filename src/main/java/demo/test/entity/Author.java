@@ -1,5 +1,8 @@
 package demo.test.entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Author {
 	String name;
 	String email;
