@@ -2,8 +2,6 @@ package demo.test.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-
 import org.springframework.stereotype.Component;
 
 @Component

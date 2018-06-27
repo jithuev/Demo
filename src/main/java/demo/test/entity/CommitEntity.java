@@ -1,24 +1,48 @@
 package demo.test.entity;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlRootElement;
-
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.annotation.JsonRootName;
-
 @Component
-//@XmlRootElement(name="sha")
 @Entity
+@Table(name="Commits_History")
 public class CommitEntity {
 	@Id
-	String sha;
-	String commitMessage;
-	Author author;
-	Committer committer;
-	
-	
+	@Column(name = "Commit_id")
+	private String commitId;
+
+	@Column(name = "Commit_message")
+	private String commitMessage;
+	private Author author;
+	private Committer committer;
+
+	@Column(name = "Created_date" , nullable=false, updatable = false) 
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDateTime;
+
+	@Column(name = "Last_updated_date" )
+	@UpdateTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updateDateTime;
+
+	public String getCommitId() {
+		return commitId;
+	}
+
+	public void setCommitId(String commitId) {
+		this.commitId = commitId;
+	}
+
 	public Committer getCommitter() {
 		return committer;
 	}
@@ -34,15 +58,6 @@ public class CommitEntity {
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
-
-	public String getSha() {
-		return sha;
-	}
-
-	public void setSha(String sha) {
-		this.sha = sha;
-	}
-
 
 	public String getCommitMessage() {
 		return commitMessage;
