@@ -1,11 +1,19 @@
 package demo.test.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Embeddable
 public class Committer {
+	@Column(name="Committer_Name")
 	String name;
+	@Column(name="Committer_Email")
 	String email;
+	@Column(name="Committer_Date")
 	String date;
 
 	public String getName() {

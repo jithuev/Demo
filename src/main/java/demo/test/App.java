@@ -23,12 +23,16 @@ import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 import org.eclipse.jgit.transport.Transport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import demo.test.repository.CommitRepo;
 
 /**
  * Hello world!
  *
  */
 @SpringBootApplication
+@EnableJpaRepositories(basePackageClasses= {CommitRepo.class})
 public class App 
 {
     public static void main( String[] args ) throws InvalidRemoteException, TransportException, GitAPIException 

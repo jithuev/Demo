@@ -1,11 +1,19 @@
 package demo.test.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Embeddable
 public class Author {
+	@Column(name="Author_Name")
 	String name;
+	@Column(name="Author_Email")
 	String email;
+	@Column(name="Author_Date")
 	String date;
 	public String getName() {
 		return name;
