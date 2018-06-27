@@ -92,7 +92,6 @@ public class CommitServiceImpl implements CommitService {
 			jsonArray = (JSONArray) parse.parse(result);
 			for (int i = 0; i < jsonArray.size(); i++) {
 				CommitEntity commit = new CommitEntity();
-				
 				josnObj = (JSONObject) jsonArray.get(i);
 				jsonObj1 = (JSONObject) josnObj.get("commit");
 				commit.setCommitMessage(jsonObj1.get("message").toString());
