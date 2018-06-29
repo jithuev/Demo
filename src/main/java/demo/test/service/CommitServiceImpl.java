@@ -23,12 +23,14 @@ import demo.test.repository.CommitRepo;
 public class CommitServiceImpl implements CommitService {
 
 	@Autowired
-	Author author;
+	private Author author;
 	
 	@Autowired
-	Committer committer;
+	private Committer committer;
 	
-	String branchName;
+	private String owner;
+	private String repository;
+	private String branchName;
 	
 	@Autowired
     DataSource dataSource;
@@ -37,10 +39,12 @@ public class CommitServiceImpl implements CommitService {
 	private CommitRepo commitRepo;
 	
 	@Override
-	public void getCommitHistory(String brachName) {
+	public void getCommitHistory(String owner, String repository, String brachName) {
 		this.branchName = brachName;
+		this.owner = owner;
+		this.repository = repository;
 		
-		final String uri = "https://api.github.com/repos/jithuev/Demo/commits?sha="+branchName;
+		final String uri = "https://api.github.com/repos/"+owner+"/"+repository+"/commits?sha="+branchName;
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
 
