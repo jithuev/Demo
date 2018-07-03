@@ -23,7 +23,7 @@ public class JenkinsJobServiceImpl implements JenkinsJobService{
     private JenkinsJobRepo jenkinsJobRepo;
 
     @Autowired
-    private BuildRepo buildRepo;
+    private BuildRepo   buildRepo;
 
     private static final String jenkinsServerUri= "http://localhost:8080";
     private static final String jenkinsServerUname= "sarath";
@@ -166,5 +166,7 @@ public class JenkinsJobServiceImpl implements JenkinsJobService{
 
         jenkinsJobRepo.saveAndFlush( mapJob(job) );
 
+        List<Build> builds = getBuilds(job);
+        buildRepo.saveAll( builds );
     }
 }
