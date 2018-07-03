@@ -2,19 +2,29 @@ package demo.test.controller;
 
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import demo.test.service.CommitServiceImpl;
+
+import java.util.Calendar;
 
 @RestController
 public class CommitController {
 	
 	@Autowired
 	CommitServiceImpl commitServiceImpl1;
-	
+
+
+    @GetMapping("/")
+    public String hello() {
+        return "Hello Spring Boot!";
+    }
+
+    @GetMapping("/time")
+    public String time() {
+        return Calendar.getInstance().getTime().toString();
+    }
+
 	@RequestMapping(path = "/getcommitHistory", method = RequestMethod.POST)    
 	public void getCommitHistory(@RequestParam("branchName") String branchName) throws ParseException {
 		commitServiceImpl1.getCommitHistory(branchName);

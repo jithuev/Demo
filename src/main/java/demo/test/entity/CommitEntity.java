@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.stereotype.Component;
@@ -18,12 +21,13 @@ import org.springframework.stereotype.Component;
 public class CommitEntity {
 	@Id
 	@Column(name = "Commit_id")
-	private String commitId;
+	@Getter @Setter private String commitId;
 
 	@Column(name = "Commit_message")
-	private String commitMessage;
-	private Author author;
-	private Committer committer;
+	@Getter @Setter private String commitMessage;
+
+	@Getter @Setter private Author author;
+	@Getter @Setter private Committer committer;
 
 	@Column(name = "Created_date" , nullable=false, updatable = false) 
 	@CreationTimestamp
@@ -35,35 +39,35 @@ public class CommitEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateDateTime;
 
-	public String getCommitId() {
-		return commitId;
-	}
-
-	public void setCommitId(String commitId) {
-		this.commitId = commitId;
-	}
-
-	public Committer getCommitter() {
-		return committer;
-	}
-
-	public void setCommitter(Committer committer) {
-		this.committer = committer;
-	}
-
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
-
-	public String getCommitMessage() {
-		return commitMessage;
-	}
-
-	public void setCommitMessage(String commitMessage) {
-		this.commitMessage = commitMessage;
-	}
+//	public String getCommitId() {
+//		return commitId;
+//	}
+//
+//	public void setCommitId(String commitId) {
+//		this.commitId = commitId;
+//	}
+//
+//	public Committer getCommitter() {
+//		return committer;
+//	}
+//
+//	public void setCommitter(Committer committer) {
+//		this.committer = committer;
+//	}
+//
+//	public Author getAuthor() {
+//		return author;
+//	}
+//
+//	public void setAuthor(Author author) {
+//		this.author = author;
+//	}
+//
+//	public String getCommitMessage() {
+//		return commitMessage;
+//	}
+//
+//	public void setCommitMessage(String commitMessage) {
+//		this.commitMessage = commitMessage;
+//	}
 }

@@ -1,0 +1,16 @@
+demo/test/repository/JenkinsJobRepo.class
+demo/test/entity/Committer.class
+demo/test/entity/CommitEntity.class
+demo/test/controller/JenkinsJobController.class
+demo/test/service/JenkinsJobService.class
+demo/test/entityjenkins/BuildKey.class
+demo/test/controller/CommitController.class
+demo/test/App.class
+demo/test/entityjenkins/Build.class
+demo/test/service/CommitService.class
+demo/test/service/CommitServiceImpl.class
+demo/test/repository/BuildRepo.class
+demo/test/repository/CommitRepo.class
+demo/test/service/JenkinsJobServiceImpl.class
+demo/test/entityjenkins/JenkinsJob.class
+demo/test/entity/Author.class

@@ -1,9 +1,11 @@
 package demo.test.repository;
 
+import demo.test.entityjenkins.Build;
+import demo.test.entityjenkins.BuildKey;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import demo.test.entity.CommitEntity;
 
 @Repository
-public interface CommitRepo extends JpaRepository<CommitEntity, Long>{
+public interface BuildRepo extends JpaRepository<Build, BuildKey> {
 }
+
