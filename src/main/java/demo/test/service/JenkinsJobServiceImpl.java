@@ -23,11 +23,11 @@ public class JenkinsJobServiceImpl implements JenkinsJobService{
     private JenkinsJobRepo jenkinsJobRepo;
 
     @Autowired
-    private BuildRepo   buildRepo;
+    private BuildRepo buildRepo;
 
-    private static final String jenkinsServerUri= "http://localhost:8080";
-    private static final String jenkinsServerUname= "sarath";
-    private static final String jenkinsServerPswd= "sarath";
+    private static final String JENKINS_SERVER_URI= "http://localhost:8080";
+    private static final String JENKINS_SERVER_UNAME= "sarath";
+    private static final String JENKINS_SERVER_PSWD= "sarath";
 
     private static int getBuildId( com.offbytwo.jenkins.model.Build build ){
         int id = -1;
@@ -126,9 +126,11 @@ public class JenkinsJobServiceImpl implements JenkinsJobService{
         List<Build> builds = new ArrayList<>();
 
         Map<String, Job> jobs;
-        try {
-            JenkinsServer jenkins = new JenkinsServer(new URI(jenkinsServerUri), jenkinsServerUname, jenkinsServerPswd);
-            System.out.println( jenkins.isRunning()? "The specified server is up & running" : "**The specified server is not available**" );
+
+        try(JenkinsServer jenkins = new JenkinsServer(
+                new URI(JENKINS_SERVER_URI), JENKINS_SERVER_UNAME, JENKINS_SERVER_PSWD)){
+            System.out.println( jenkins.isRunning()? "The specified server is up & running"
+                    : "**The specified server is not available**" );
             jobs = jenkins.getJobs();
 
             System.out.println("Jobs:");
@@ -155,9 +157,11 @@ public class JenkinsJobServiceImpl implements JenkinsJobService{
     @Override
     public void getJob(String jobName) {
         JobWithDetails job = null;
-        try {
-            JenkinsServer jenkins = new JenkinsServer(new URI(jenkinsServerUri), jenkinsServerUname, jenkinsServerPswd);
-            System.out.println( jenkins.isRunning()? "The specified server is up & running" : "**The specified server is not available**" );
+
+        try(JenkinsServer jenkins = new JenkinsServer(
+                new URI(JENKINS_SERVER_URI), JENKINS_SERVER_UNAME, JENKINS_SERVER_PSWD)){
+            System.out.println( jenkins.isRunning()? "The specified server is up & running"
+                    : "**The specified server is not available**" );
             job = jenkins.getJob(jobName).details();
         }
         catch (Exception e){

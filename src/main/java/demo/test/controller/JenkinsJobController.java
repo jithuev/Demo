@@ -1,7 +1,6 @@
 package demo.test.controller;
 
 import demo.test.service.JenkinsJobServiceImpl;
-import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
