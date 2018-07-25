@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import demo.test.repository.CommitRepo;
 
 /**
- * Hello world!
+ * Hello world example!
  *
  */
 @SpringBootApplication
