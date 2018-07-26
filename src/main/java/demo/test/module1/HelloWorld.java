@@ -6,6 +6,8 @@ class HelloWorld
     // Prints "Hello, World" to the terminal window.
     public static void main(String args[])
     {
+				// just a comment
+				// another one
         System.out.println("Hello, World");
     }
 }
