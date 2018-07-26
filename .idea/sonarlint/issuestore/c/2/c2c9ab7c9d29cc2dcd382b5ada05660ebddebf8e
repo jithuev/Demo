@@ -1,0 +1,37 @@
+
+bsquid:S2259"F"NullPointerException" will be thrown when invoking method "mapJob()".(›Ïò«8´ô®Æ,
+gsquid:S2259"FA "NullPointerException" could be thrown; "buildDet" is nullable here.(õĞ…€şÿÿÿÿ8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(…íìİûÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(È©ƒ«8´ô®Æ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(šôŞôøÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(¹Ñö8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ş€öÿÿÿÿÿ8´ô®Æ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(…íìİûÿÿÿÿ8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(÷†Œúÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÎÏŸª8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Úó“üÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(‡è¾ï8´ô®Æ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(©äûÄúÿÿÿÿ8´ô®Æ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(›”û¶8´ô®Æ,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ó–±8´ô®Æ,
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(êÑş÷ûÿÿÿÿ8´ô®Æ,
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ï“æù8´ô®Æ,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÈÌÅ®8´ô®Æ,
